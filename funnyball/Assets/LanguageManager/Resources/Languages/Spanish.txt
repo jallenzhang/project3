@@ -1,0 +1,27 @@
+/Resources/Languages/
+
+
+HelloWorld2 = Hola de nuevo mundo!
+
+
+HelloWorld = ¡Hola Mundo!
+
+
+english = Inglés #n (English)
+
+
+spanish = Español #n (Spanish)
+
+
+french = Francés #n (French)
+
+
+russian = Ruso #n (Russian)
+
+
+italian = Italiano #n (Italian)
+
+
+chinese = Chino #n (Chinese)
+
+

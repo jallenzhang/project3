@@ -1,0 +1,36 @@
+/LanguageManager/Resources/Languages/
+
+
+HelloWorld2 = Hello AGAIN World!
+
+
+HelloWorld = Hello World!
+
+
+english = English
+
+
+spanish = Spanish
+
+
+french = French
+
+
+russian = Russian
+
+
+italian = Italian
+
+
+chinese = Chinese
+
+
+EnemyLeave = The enemy has gone, you WIN!
+
+
+Tip = Tip
+
+
+Confirm = Confirm
+
+

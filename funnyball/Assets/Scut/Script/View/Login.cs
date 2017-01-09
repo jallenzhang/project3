@@ -1,0 +1,115 @@
+using System;
+using UnityEngine;
+
+public class Login : MonoBehaviour
+{
+    string user = "";
+    string pwd = "";
+    /// <summary>
+    /// 只被调用一次,变量声明
+    /// </summary>
+    void Awake()
+    {
+        //NetWriter.SetMd5Key("");
+    }
+
+    /// <summary>
+    /// 只被调用一次
+    /// </summary>
+    void Start()
+    {
+    }
+
+    /// <summary>
+    /// 每一帧调用
+    /// </summary>
+    void Update()
+    {
+
+    }
+
+    /// <summary>
+    /// 每一帧调用,处理Rigdibody时代替Update方法
+    /// </summary>
+    void FixedUpdate()
+    {
+
+    }
+
+    /// <summary>
+    /// 每一帧调用,Update方法全部执行完后执行
+    /// </summary>
+    void LateUpdate()
+    {
+
+    }
+
+        string server = string.Empty;
+    /// <summary>
+    /// 每一帧被调用多次,enabled=false时禁用
+    /// </summary>
+    void OnGUI()
+    {
+        int cwidth = Screen.width / 2;
+        int cheight = Screen.height / 2;
+        var boxPos = new Rect(cwidth - 110, cheight - 160, 240, 120);
+
+        GUI.Label(new Rect(10, 200, 100, 30), "Server");
+        server = GUI.TextField(new Rect(50, 200, 150, 30), server, 30);
+
+        GUI.Box(boxPos, "");
+        GUI.Label(new Rect(cwidth - 100, cheight - 150, 100, 22), "User:");
+        user = GUI.TextField(new Rect(cwidth - 10, cheight - 150, 120, 22), user, 20);
+        GUI.Label(new Rect(cwidth - 100, cheight - 120, 100, 22), "Password:");
+        pwd = GUI.PasswordField(new Rect(cwidth - 10, cheight - 120, 120, 22), pwd, '*', 20);
+
+        if (GUI.Button(new Rect(cwidth - 100, cheight - 80, 80, 22), "Regist"))
+        {
+            //TODO:登录服务器分布式访问
+            //NetWriter.SetUrl("http://pass.scutgame.com/", ResponseContentType.Json, true);
+            //Debug.Log("Started to access login server, resp-type:" + NetWriter.ResponseContentType.ToString());
+
+            NetWriter.SetUrl(server);// ("42.96.149.51:9001");
+            Net.Instance.Send((int)ActionType.Regist, RegistCallback, null);
+        }
+
+        if (GUI.Button(new Rect(cwidth, cheight - 80, 80, 22), "Login"))
+        {
+            //NetWriter.SetUrl(server);// ("42.96.149.51:9001");
+
+            //Debug.Log(NetWriter.GetUrl());
+            //GameSetting.Instance.Pid = user;
+            //GameSetting.Instance.Password = pwd;
+            //Debug.Log("GameSetting.Instance.Password " + GameSetting.Instance.Password);
+            //Net.Instance.Send((int)ActionType.Login, LoginCallback, null);
+        }
+
+    }
+
+    private void RegistCallback(ActionResult actionResult)
+    {
+        if (actionResult != null)
+        {
+            user = actionResult.Get<string>("passportID");
+            pwd = actionResult.Get<string>("password");
+        }
+    }
+
+    private void LoginCallback(ActionResult actionResult)
+    {
+        if (actionResult != null && actionResult.Get<int>("GuideID") == (int)ActionType.CreateRole)
+        {
+            Application.LoadLevelAsync("RoleScene");
+            return;
+        }
+        Application.LoadLevelAsync("MainScene");
+    }
+
+    /// <summary>
+    /// 不销毁对象,场景切换时对象依然存在.
+    /// </summary>
+    void DontDestroyOnLoad()
+    {
+
+    }
+}

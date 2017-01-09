@@ -1,0 +1,21 @@
+ManifestFileVersion: 0
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: shared_asset.assetbundle
+      Dependencies: {}
+    Info_1:
+      Name: prompt_asset.assetbundle
+      Dependencies: {}
+    Info_2:
+      Name: prompt.assetbundle
+      Dependencies:
+        Dependency_0: shared_asset.assetbundle
+        Dependency_1: prompt_asset.assetbundle
+    Info_3:
+      Name: message.assetbundle
+      Dependencies:
+        Dependency_0: shared_asset.assetbundle
+    Info_4:
+      Name: login.assetbundle
+      Dependencies: {}

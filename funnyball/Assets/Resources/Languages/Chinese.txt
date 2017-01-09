@@ -1,0 +1,36 @@
+/Resources/Languages/
+
+
+HelloWorld2 = 世界您好！
+
+
+HelloWorld = 世界您好！
+
+
+english = 英 #n (English)
+
+
+spanish = 西班牙語 #n (Spanish)
+
+
+french = 法國 #n (French)
+
+
+russian = 俄語 #n (Russian)
+
+
+italian = 意大利 #n (Italian)
+
+
+chinese = 中國 #n (Chinese)
+
+
+EnemyLeave = 对手已离开游戏，你赢了!
+
+
+Tip = 提示
+
+
+Confirm = 确定
+
+

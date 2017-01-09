@@ -1,0 +1,2 @@
+E:\mine\xmlmanager\Assets\scripts\LoaderLib\obj\Debug\LoaderLib.csprojResolveAssemblyReference.cache
+E:\mine\xmlmanager\Assets\scripts\LoaderLib\obj\Debug\LoaderLib.csprojFakesResolveAssemblyReference.cache
